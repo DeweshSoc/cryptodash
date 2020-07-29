@@ -1,0 +1,39 @@
+<%- include("header") %> 
+
+<div class="search-section">
+    <h1 class="big-heading text-center">Search</h1>
+    <p>Search the top 100 cryptocurrencies by their ids (1 to 100) or search currencies by their names. <br> We have mapped the currencies accordingly.</p>
+    
+    <div class="formData">
+        <form action="/search/byId" method="POST">
+            <div class="form-group">
+                <label for="idCurrency">ID of the Cryptocurrency</label>
+                <input type="number" class="form-control" placeholder="ID" name="idCurrency" aria-describedby="helpId">
+                <input class="btn btn-outline-light btn-sm" type="submit" value="Go">
+                <small id="helpId" class="text-muted">Enter ID (1 to 100)</small>
+                
+            </div>
+        </form>
+    </div>
+
+    <h4>OR</h4>
+    <div class="formData">
+        <form action="/search/byName" method="POST">
+            <div class="form-group">
+                <label for="idCurrency">Name of the Cryptocurrency</label>
+                <input type="text" class="form-control" placeholder="SYMBOL" name="nameCurrency" aria-describedby="helpId">
+                <input class="btn btn-outline-light btn-sm" type="submit" value="Go">
+                <small id="helpId" class="text-muted">Enter name of the currency (first letter uppercase for every work in the name and rest lowercase)</small>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+
+
+
+</div>
+
+<%- include("footer") %> 

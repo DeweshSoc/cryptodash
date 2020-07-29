@@ -1,0 +1,142 @@
+<%- include("header")  %> 
+
+
+
+
+        <div class="middle-section">
+          <h1 class="big-header"><%= nameEjs %> </h1>
+          <p class="symbol"><%= symbolEjs %> </p>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card card-middle">
+                <div class="card-body card-body-middle-section">
+                  <h3 class="card-title card-title-middle-section">
+                    Market Cap
+                  </h3>
+                  <p class="card-text card-text-middle-section"><%= marketCapEjs %> <sup class="card-sup">Bi</sup></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-middle">
+                <div class="card-body card-body-middle-section">
+                  <h3 class="card-title card-title-middle-section">
+                    Total Supply
+                  </h3>
+                  <p class="card-text card-text-middle-section"><%= totalSupplyEjs %> <sup class="card-sup">Bi</sup></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-middle last-card">
+                <div class="card-body card-body-middle-section last-card-body">
+                  <h3 class="card-title card-title-middle-section">
+                    Price ($)
+                  </h3>
+                  <% if(priceEjs>=1){ %>
+                  <%  priceEjs = Math.ceil(priceEjs).toString().slice(0,6); %>
+                  <p class="card-text card-text-middle-section"><%= priceEjs %>  </p> 
+                    <%  }else{ %>
+                      <%  priceEjs = (priceEjs).toString().slice(0,6); %>
+                      <p class="card-text card-text-middle-section"><%= priceEjs %>  </p>
+                    <% } %> 
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="description">
+            <span class="truncate"> <%= currencyDescriptionEjs %>  </span
+            >...<a href=<%= currencyWebsiteEjs %>  target="_blank"> read more</a> 
+            <a href=<%= currencyTechDocEjs %>  target="_blank">techdoc</a>
+          </p>
+           
+          <div class="mycanvas">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="first-division">
+            <p class="division-heading">Today's Volume</p>
+            <h1 class="date-day time big-heading"><sup>$</sup> <%= volume24HourEjs %><sup class="card-sup">Bi</sup> </h1>
+            <hr class="special-rule" />
+            <p class="d-inline-block sp-rule-para">C.Supply</p>
+            <hr class="special-rule" />
+            <h6 class="time date-day small-text"><sup>$</sup> <%= circulatingSupplyEjs %> <sup class="card-sup">Bi</sup>
+            </h6>
+          </div>
+          <hr />
+          <div class="second-division">
+            <p class="division-heading">Percent Changes</p>
+            <div class="row box-row">
+              <div class="col-md-6">
+                <div class="card card-2">
+                  <div class="card-body card-body-right-section">
+                    <h3
+                      class="card-title card-title-right-section card-2-title"
+                    >
+                        Day
+                    </h3>
+                    <p class="card-text card-text-right-section time"><%= percentageChange24HEjs %>%</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card card-2">
+                  <div class="card-body card-body-right-section">
+                    <h3
+                      class="card-title card-title-right-section card-2-title"
+                    >
+                      Week
+                    </h3>
+                    <p class="card-text card-text-right-section time"><%= percentageChange7DEjs %>%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="third-division">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card card-1">
+                  <div class="card-body card-body-right-section">
+                    <h3 class="card-title card-title-right-section">Rank</h3>
+                    <p class="card-text card-text-right-section time"><%= rankEjs %> </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card card-1">
+                  <div class="card-body card-body-right-section">
+                    <h3 class="card-title card-title-right-section">M.Supply</h3>
+                    <p class="card-text card-text-right-section time"><%= maxSupplyEjs %></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card card-1">
+                  <div class="card-body card-body-right-section">
+                    <h3 class="card-title card-title-right-section">Logo</h3>
+                    <img src="<%= currencyLogoEjs %> " alt="logo" width="40">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card card-1">
+                  <div class="card-body card-body-right-section">
+                    <h3 class="card-title card-title-right-section">Updated</h3>
+                    <p class="card-text card-text-right-section time" style="line-height: 1.2;"><%= lastUpdatedEjs %> <br> <small class="ist">IST</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fourth-division"></div>
+        </div>
+      </div>
+
+      
+
+<%- include("footer")  %>       
